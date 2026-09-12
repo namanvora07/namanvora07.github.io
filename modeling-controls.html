@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modeling &amp; Controls — Naman Vora</title>
+<meta name="description" content="Physics-based system modeling and control design projects in MATLAB/Simulink by Naman Vora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-mark"><span class="box">NV</span> Naman Vora</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="design-simulation.html">Design &amp; Simulation</a></li>
+      <li><a href="manufacturing-quality.html">Manufacturing &amp; Quality</a></li>
+      <li><a href="modeling-controls.html" class="active">Modeling &amp; Controls</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Domain 03</div>
+    <h1>Modeling &amp; Controls</h1>
+  </div>
+</header>
+
+<main class="projects-stack">
+
+    <!-- PROJECT 1 -->
+    <article class="proj">
+      <div class="proj-banner">
+        <div class="wrap">
+          <h2>Series–Parallel Hybrid Powertrain Modeling &amp; Control</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="proj-meta">
+          <div class="pb-index">01</div>
+          <div>
+            <div class="proj-sub">Stateflow supervisory control · battery electro-thermal modeling · measured drive-cycle validation · Clemson University</div>
+            <div class="tags">
+            <span class="tag-chip">MATLAB/Simulink</span>
+            <span class="tag-chip">Stateflow</span>
+            <span class="tag-chip">Battery Modeling</span>
+            <span class="tag-chip">BSFC Mapping</span>
+            <span class="tag-chip">GPS Drive Cycle</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="cao">
+        <div>
+          <div class="cao-block">
+            <div class="cao-label">CHALLENGE</div>
+            <div class="cao-text"><p>Size and compare conventional, battery-electric, and hybrid powertrains for a family sedan, then design a hybrid that actually beats both. The hard part isn't the hardware — it's the supervisory logic: deciding moment to moment whether to run on motor, engine, or both, while keeping the engine near its BSFC sweet spot, the battery inside safe state-of-charge bounds, and the pack under thermal limits.</p></div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">APPROACH</div>
+            <div class="cao-text">
+              <ul>
+                <li>Collected a real 37.8-mile drive cycle by GPS logger (CU-ICAR to Clemson main campus) and derived tractive power demand — 52 kW peak, 40.4 kWh at the wheels — as the sizing basis.</li>
+                <li>Modeled all three architectures in Simulink with a forward-facing, closed-loop structure: PID driver model, supervisory control layer, BSFC-based gear-shift map, drivetrain torque flow, and vehicle dynamics.</li>
+                <li>Downsized the engine to a 1.5 L, 57 kW unit and paired it with an HPEVS AC-23 motor, sizing a 20s35p pack from the same cells used in the BEV study.</li>
+                <li>Built a Stateflow supervisory controller with five state variables (engine, motor, clutch, regen, charging) across Economy and Sport modes, with SoC limits adjusted dynamically against vehicle speed — faster vehicles can afford lower reserves because regen will replenish them.</li>
+                <li>Modeled battery SoC, OCV, internal resistance, heat generation, and PID-controlled coolant flow, and unit-tested the control logic against forced input combinations before running the full cycle.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">OUTCOME</div>
+            <div class="cao-text"><p>The hybrid achieved 64 MPG against 43 MPG for the conventional powertrain — a 21 MPG gain — with 90 kW combined output and 819 miles of range on a 12.8-gallon tank. Pack temperature held below 32 °C throughout the cycle under closed-loop coolant control. A full cost comparison across all three architectures, accounting for purchase price, fuel/charging, and battery replacement, recommended the series-parallel hybrid as the best balance of performance, range, and roughly 49% fuel-cost savings.</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 2 -->
+    <article class="proj">
+      <div class="proj-banner">
+        <div class="wrap">
+          <h2>Nonlinear Vehicle Stability Control</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="proj-meta">
+          <div class="pb-index">02</div>
+          <div>
+            <div class="proj-sub">Feedback linearization vs. sliding mode yaw control · 7-DOF plant · CarSim validation · Clemson University</div>
+            <div class="tags">
+            <span class="tag-chip">MATLAB/Simulink</span>
+            <span class="tag-chip">CarSim</span>
+            <span class="tag-chip">Sliding Mode Control</span>
+            <span class="tag-chip">Feedback Linearization</span>
+            <span class="tag-chip">FMVSS 126</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="cao">
+        <div>
+          <div class="cao-block">
+            <div class="cao-label">CHALLENGE</div>
+            <div class="cao-text"><p>Standard stability controllers are built on linearized models like the 2-DOF bicycle model, which hold up in normal driving but break down exactly where drivers most need help — outside the linear region of tire cornering stiffness. Drivers apply the same linear mental model, overcorrect, and induce pendulum behavior ending in spin-out. The task was to design nonlinear controllers that stay valid in that regime, and to determine which approach is actually viable in a real vehicle.</p></div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">APPROACH</div>
+            <div class="cao-text">
+              <ul>
+                <li>Built a 7-DOF double-track nonlinear plant model with state-dependent tire cornering stiffness, using pure-slip lateral force data for a 215/55/R17 tire extracted from CarSim.</li>
+                <li>Derived a Feedback Linearization control law that algebraically cancels the vehicle's natural yaw dynamics, using a linearized two-track nominal model with cornering stiffness varying across eight normal-load intervals.</li>
+                <li>Derived a Sliding Mode control law that treats the same cancellation as equivalent control, then adds a discontinuous switching term to drive error to zero regardless of unmodeled dynamics — replacing the sign function with a saturation boundary layer to suppress actuator chattering.</li>
+                <li>Tested both under FMVSS 126 Sine-with-Dwell at 80 km/h and ISO 3888-1 Double Lane Change at 60 and 120 km/h, with reference yaw rate saturated to physically attainable limits.</li>
+                <li>Cross-validated controller performance against a high-fidelity CarSim plant with combined-slip tire dynamics.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">OUTCOME</div>
+            <div class="cao-text"><p>Both controllers tracked reference yaw rate through aggressive steering inputs, but SMC proved the stronger option: it held smaller deviation from target at a gain of 100 s⁻¹, where FBL overshot even at 300 s⁻¹. The saturation function eliminated high-frequency chattering, producing a smooth corrective moment curve — meaningful for actuator durability and passenger comfort, not just plot aesthetics. Control effort at peak comprised roughly 62.5% of total vehicle yaw moment. FBL was found to lack the robustness real automotive applications demand; SMC delivered equivalent tracking at lower control expenditure, with Super-Twisting SMC identified as the next step.</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="wrap">
+      <div class="page-nav">
+      <a href="manufacturing-quality.html">← Manufacturing &amp; Quality</a>
+      <a href="index.html">All domains →</a>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h2>Let's build something precise.</h2>
+        <p>Open to full-time and internship opportunities in mechanical design, manufacturing engineering, and quality — automotive or adjacent industries.</p>
+      </div>
+      <div class="footer-contacts">
+        <a href="mailto:namanv@clemson.edu">✉ &nbsp; namanv@clemson.edu</a>
+        <a href="tel:+18643258998">☎ &nbsp; +1 (864) 325-8998</a>
+        <a href="https://www.linkedin.com/in/namanparasvora/" target="_blank" rel="noopener">in &nbsp; linkedin.com/in/namanparasvora</a>
+        <a href="https://github.com/namanvora07" target="_blank" rel="noopener">⌥ &nbsp; github.com/namanvora07</a>
+      </div>
+    </div>
+    <div class="title-block">
+      <div><b>DRAWN BY</b>Naman Paras Vora</div>
+      <div><b>LOCATION</b>Greenville, SC</div>
+      <div><b>DOMAIN</b>Modeling &amp; Controls</div>
+      <div><b>REV</b>2026.2</div>
+      <div><b>SHEET</b>4 OF 4</div>
+    </div>
+    <div class="copyright">© 2026 Naman Vora</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

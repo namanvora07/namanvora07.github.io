@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manufacturing &amp; Quality — Naman Vora</title>
+<meta name="description" content="Production system design, plant layout, and Six Sigma process improvement projects by Naman Vora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-mark"><span class="box">NV</span> Naman Vora</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="design-simulation.html">Design &amp; Simulation</a></li>
+      <li><a href="manufacturing-quality.html" class="active">Manufacturing &amp; Quality</a></li>
+      <li><a href="modeling-controls.html">Modeling &amp; Controls</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Domain 02</div>
+    <h1>Manufacturing &amp; Quality</h1>
+  </div>
+</header>
+
+<main class="projects-stack">
+
+    <!-- PROJECT 1 -->
+    <article class="proj">
+      <div class="proj-banner">
+        <div class="wrap">
+          <h2>Multivariant Transmission Assembly Line Design</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="proj-meta">
+          <div class="pb-index">01</div>
+          <div>
+            <div class="proj-sub">6-, 8- and 9-speed transmission line · 3-scenario throughput &amp; cost optimization · Clemson University</div>
+            <div class="tags">
+            <span class="tag-chip">Siemens Plant Simulation</span>
+            <span class="tag-chip">Line Balancing</span>
+            <span class="tag-chip">Cost Modeling</span>
+            <span class="tag-chip">MS Excel</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="cao">
+        <div>
+          <div class="cao-block">
+            <div class="cao-label">CHALLENGE</div>
+            <div class="cao-text"><p>Stand up a production floor for a new transmission, capable of assembling three variants — 6-, 8-, and 9-speed — to meet 70,000 units/year. The line had to hit that target under real conditions: machine failures, cycle-time variability, personnel breaks, and finite floor space. Two risks dominated: starvation cost from an unbalanced line, and cross-variant mismatching during assembly.</p></div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">APPROACH</div>
+            <div class="cao-text">
+              <ul>
+                <li>Built the model in three escalating scenarios — <em>Ideal</em> (no failures or variability), <em>Typical</em> (MTTF/MTTR, resources, variability, in-line buffers), and <em>Real</em> (minimum cost under a hard 2-shift, 5-day constraint).</li>
+                <li>Ran machine-selection cost analysis in Excel, finding that combining Processes A and B on one machine and Processes C and D on another beat separate stations on both cost and waiting time.</li>
+                <li>Added convertors on the bell-housing and bearing-housing conveyors that read each part's variant processing time and routed it to the matching assembly station, eliminating cross-variant mismatches.</li>
+                <li>Identified starvation as over 90% of total operating cost, then attacked it directly — upgrading to Okuma M3453 machines (6% vs. 15% failure rate), adding a seventh machine on the bottleneck process, and eliminating the vertical buffer store in favor of just-in-time flow.</li>
+                <li>Modeled worker footpaths and staircases so personnel could reach stations without crossing robot or conveyor hazard zones.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">OUTCOME</div>
+            <div class="cao-text"><p>Cut line waiting time from 62.84% to 43.96% and reduced total annual operating cost by 53.3% — from $642.8M to $300.4M — while dropping from three shifts to two and from 36 workers to 30. The final layout produced 73,434 units/year: 104.9% of target, a safe buffer for quality fallout without the 19.8% overproduction and inventory burden of the typical-case layout. A $316K investment in more reliable machinery returned $337.7M in avoided starvation cost.</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 2 -->
+    <article class="proj">
+      <div class="proj-banner">
+        <div class="wrap">
+          <h2>Brush Assembly Plant Layout Optimization</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="proj-meta">
+          <div class="pb-index">02</div>
+          <div>
+            <div class="proj-sub">Morgan Advanced Materials, Greenville SC · Lean Six Sigma Green Belt capstone · Clemson University</div>
+            <div class="tags">
+            <span class="tag-chip">Six Sigma DMAIC</span>
+            <span class="tag-chip">Siemens Plant Simulation</span>
+            <span class="tag-chip">AutoCAD</span>
+            <span class="tag-chip">Spaghetti Analysis</span>
+            <span class="tag-chip">Process Mapping</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="cao">
+        <div>
+          <div class="cao-block">
+            <div class="cao-label">CHALLENGE</div>
+            <div class="cao-text"><p>Morgan Advanced Materials' Industrial Low Volume carbon-brush area had grown without a layout strategy. Equipment from other production areas sat in the footprint, machines were placed without flow logic, and parts travelled highly non-linear paths across machining, thermal processing, and assembly. The result was excessive worker motion, wasted floor space, and a workflow too tangled to supervise effectively.</p></div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">APPROACH</div>
+            <div class="cao-text">
+              <ul>
+                <li>Scoped the project on industry-advisor guidance to the top 8 parts by annual volume — 40,322 units — rather than the full 40,000-part catalogue.</li>
+                <li>Mapped the full process from drill/score/dedust through auto-bagging into five swimlane categories, then built baseline spaghetti charts and measured worker travel distance per part with a measuring wheel.</li>
+                <li>Ran a 5-Why root-cause analysis, tracing excessive movement back to a layout that had evolved without any standardized, process-based redesign.</li>
+                <li>Divided the floor into six sequential process zones — machining, product treatment, pad station, electrical assembly, finishing, packing — to force straight-line flow and eliminate backtracking.</li>
+                <li>Iterated the layout in AutoCAD and validated flow and throughput in Siemens Plant Simulation, correcting a first iteration that was too cluttered and under-spaced.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cao-block">
+            <div class="cao-label">OUTCOME</div>
+            <div class="cao-text"><p>Cut average worker travel from 278.6 to 96.5 ft per part — a 65.36% reduction in motion waste — and shrank the floor footprint from 8,844 to 3,724 sq ft, freeing 57.89% of the area for additional lines. Daily worker travel dropped from roughly 8.6 miles to 3 miles, recovering 2.06 hours of productive time per day and an estimated $12,757 in annual labor cost. Queue racks and inclined conveyors were recommended as the next phase.</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="wrap">
+      <div class="page-nav">
+      <a href="design-simulation.html">← Design &amp; Simulation</a>
+      <a href="modeling-controls.html">Modeling &amp; Controls →</a>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h2>Let's build something precise.</h2>
+        <p>Open to full-time and internship opportunities in mechanical design, manufacturing engineering, and quality — automotive or adjacent industries.</p>
+      </div>
+      <div class="footer-contacts">
+        <a href="mailto:namanv@clemson.edu">✉ &nbsp; namanv@clemson.edu</a>
+        <a href="tel:+18643258998">☎ &nbsp; +1 (864) 325-8998</a>
+        <a href="https://www.linkedin.com/in/namanparasvora/" target="_blank" rel="noopener">in &nbsp; linkedin.com/in/namanparasvora</a>
+        <a href="https://github.com/namanvora07" target="_blank" rel="noopener">⌥ &nbsp; github.com/namanvora07</a>
+      </div>
+    </div>
+    <div class="title-block">
+      <div><b>DRAWN BY</b>Naman Paras Vora</div>
+      <div><b>LOCATION</b>Greenville, SC</div>
+      <div><b>DOMAIN</b>Manufacturing &amp; Quality</div>
+      <div><b>REV</b>2026.2</div>
+      <div><b>SHEET</b>3 OF 4</div>
+    </div>
+    <div class="copyright">© 2026 Naman Vora</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
