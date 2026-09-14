@@ -16,9 +16,11 @@
   <div class="wrap">
     <a href="index.html" class="nav-mark"><span class="box">NV</span> Naman Vora</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="design-simulation.html">Design &amp; Simulation</a></li>
-      <li><a href="manufacturing-quality.html" class="active">Manufacturing &amp; Quality</a></li>
-      <li><a href="modeling-controls.html">Modeling &amp; Controls</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="experience.html">Positions of Responsibility</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
       <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
@@ -27,7 +29,7 @@
 
 <header class="page-head">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Domain 02</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="projects.html">Projects</a> &nbsp;/&nbsp; Domain 02</div>
     <h1>Manufacturing &amp; Quality</h1>
   </div>
 </header>
@@ -38,46 +40,62 @@
     <article class="proj">
       <div class="proj-banner">
         <div class="wrap">
-          <h2>Multivariant Transmission Assembly Line Design</h2>
+          <h2>Design of Multivariant Transmission Assembly Line</h2>
         </div>
       </div>
       <div class="wrap">
         <div class="proj-meta">
           <div class="pb-index">01</div>
           <div>
-            <div class="proj-sub">6-, 8- and 9-speed transmission line · 3-scenario throughput &amp; cost optimization · Clemson University</div>
             <div class="tags">
-            <span class="tag-chip">Siemens Plant Simulation</span>
-            <span class="tag-chip">Line Balancing</span>
-            <span class="tag-chip">Cost Modeling</span>
-            <span class="tag-chip">MS Excel</span>
-          </div>
+              <span class="tag-chip">Siemens Plant Simulation</span>
+              <span class="tag-chip">Manufacturing Systems Design</span>
+              <span class="tag-chip">Line Balancing</span>
+              <span class="tag-chip">Cost Analysis</span>
+              <span class="tag-chip">MS Excel</span>
+            </div>
           </div>
         </div>
-
         <div class="cao">
-        <div>
           <div class="cao-block">
             <div class="cao-label">CHALLENGE</div>
-            <div class="cao-text"><p>Stand up a production floor for a new transmission, capable of assembling three variants — 6-, 8-, and 9-speed — to meet 70,000 units/year. The line had to hit that target under real conditions: machine failures, cycle-time variability, personnel breaks, and finite floor space. Two risks dominated: starvation cost from an unbalanced line, and cross-variant mismatching during assembly.</p></div>
+            <div class="cao-text"><p>Design a machining and assembly line for 6-, 8-, and 9-speed transmission variants to meet an annual demand of 70,000 units. The final configuration had to achieve this within two shifts per day, five days per week, while addressing machining bottlenecks, excessive waiting, and resource costs.</p></div>
           </div>
           <div class="cao-block">
             <div class="cao-label">APPROACH</div>
             <div class="cao-text">
               <ul>
-                <li>Built the model in three escalating scenarios — <em>Ideal</em> (no failures or variability), <em>Typical</em> (MTTF/MTTR, resources, variability, in-line buffers), and <em>Real</em> (minimum cost under a hard 2-shift, 5-day constraint).</li>
-                <li>Ran machine-selection cost analysis in Excel, finding that combining Processes A and B on one machine and Processes C and D on another beat separate stations on both cost and waiting time.</li>
-                <li>Added convertors on the bell-housing and bearing-housing conveyors that read each part's variant processing time and routed it to the matching assembly station, eliminating cross-variant mismatches.</li>
-                <li>Identified starvation as over 90% of total operating cost, then attacked it directly — upgrading to Okuma M3453 machines (6% vs. 15% failure rate), adding a seventh machine on the bottleneck process, and eliminating the vertical buffer store in favor of just-in-time flow.</li>
-                <li>Modeled worker footpaths and staircases so personnel could reach stations without crossing robot or conveyor hazard zones.</li>
+                <li><strong>Case 1 — Ideal plant layout:</strong> Established a baseline with fixed cycle times, inline buffering, and no machine failures or worker breaks. Compared machine configurations to identify bottlenecks and combined Processes A and B to address idle time and uneven resource utilization.</li>
+                <li><strong>Case 2 — Typical three-shift layout:</strong> Expanded to six parallel A/B machining stations and incorporated machine failures, repair times, cycle-time variability, conveyor transport, and scheduled worker breaks. Established throughput and cost benchmarks under more realistic manufacturing conditions.</li>
+                <li><strong>Case 3 — Optimized two-shift layout:</strong> Increased A/B machining capacity to seven stations and selected equipment with a lower modeled failure rate — 6% instead of 15%. Revised shift schedules, eliminated dedicated buffer storage, and expanded variant-specific assembly paths to meet demand with fewer operating hours.</li>
+                <li><strong>Improved bottleneck capacity:</strong> Increased combined bell-housing machining capacity from six to seven parallel machines and selected equipment with a lower modeled failure rate — 6% instead of 15% — to support production with fewer operating hours.</li>
+                <li><strong>Implemented variant-specific routing:</strong> Added conveyor converters using part processing-time attributes to route matching bell and bearing housings to dedicated assembly stations. This addressed incorrect pairing between the three transmission variants in the initial model.</li>
+                <li><strong>Refined resource allocation and cost trade-offs:</strong> Used Excel to compare equipment, labor, and material-handling costs, alongside analysis of waiting costs. Evaluated additional machinery against maintaining a third shift and incorporated designated footpaths and staircases for worker access around conveyors and robotic handling areas.</li>
               </ul>
             </div>
           </div>
           <div class="cao-block">
-            <div class="cao-label">OUTCOME</div>
-            <div class="cao-text"><p>Cut line waiting time from 62.84% to 43.96% and reduced total annual operating cost by 53.3% — from $642.8M to $300.4M — while dropping from three shifts to two and from 36 workers to 30. The final layout produced 73,434 units/year: 104.9% of target, a safe buffer for quality fallout without the 19.8% overproduction and inventory burden of the typical-case layout. A $316K investment in more reliable machinery returned $337.7M in avoided starvation cost.</p></div>
+            <div class="cao-label">OUTCOME / RESULTS</div>
+            <div class="cao-text">
+              <ul>
+                <li><strong>Annual production demand:</strong> Achieved 73,434 units in the final simulation, exceeding the target by 4.9%. Reduced excess production from 13,837 to 3,434 units annually compared with the three-shift baseline.</li>
+                <li><strong>Reduced operating hours:</strong> Transitioned from three shifts to two, reducing net operating time from 22.5 to 15 hours per day while maintaining the required annual output.</li>
+                <li><strong>Lowered reported waiting:</strong> Reduced the simulation's reported waiting percentage from 62.84% to 43.96%, an 18.88-percentage-point reduction.</li>
+                <li><strong>Reduced resource requirements:</strong> Decreased planned staffing from 36 to 30 workers and eliminated the dedicated vertical buffer-storage system from the proposed layout.</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <div class="proj-figures">
+          <figure>
+            <img src="assets/transmission-plant-layout.jpg" alt="3D plant layout of the transmission assembly line in Siemens Plant Simulation">
+            <figcaption>Final 3D plant layout in Siemens Plant Simulation — machining lines, conveyor routing, pick-and-place robots, assembly stations, and worker footpaths and staircases around the handling areas.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/transmission-cost-comparison.jpg" alt="Cost comparison table between Case 2 and Case 3 showing a 53% total cost reduction">
+            <figcaption>Cost comparison, Case 2 vs. Case 3. Material-handling and labor savings more than offset the added machine-tool investment, cutting total cost 53% from $9.90M to $5.25M.</figcaption>
+          </figure>
         </div>
       </div>
     </article>
@@ -158,8 +176,8 @@
       <div><b>DRAWN BY</b>Naman Paras Vora</div>
       <div><b>LOCATION</b>Greenville, SC</div>
       <div><b>DOMAIN</b>Manufacturing &amp; Quality</div>
-      <div><b>REV</b>2026.2</div>
-      <div><b>SHEET</b>3 OF 4</div>
+      <div><b>REV</b>2026.3</div>
+      <div><b>SHEET</b>4 OF 8</div>
     </div>
     <div class="copyright">© 2026 Naman Vora</div>
   </div>
